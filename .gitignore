@@ -1,0 +1,21 @@
+# Ignore build directories
+/build/
+/build-*/
+/*.build/
+
+# Ignore CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+
+# macOS specific
+.DS_Store
+
+# Xcode specific
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+
+# VS Code specific
+.vscode/
