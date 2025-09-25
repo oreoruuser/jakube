@@ -8,7 +8,7 @@ project(Jakube
 add_library(Jakube INTERFACE)
 add_library(Jakube::Jakube ALIAS Jakube)
 
-foreach (HEADER jakubelib.h kissrandom.h mman.h)
+foreach (HEADER jakubelib.h kissrandom.h)
   configure_file("${CMAKE_CURRENT_SOURCE_DIR}/src/${HEADER}" "${CMAKE_CURRENT_BINARY_DIR}/include/jakube/${HEADER}" COPYONLY)
 endforeach ()
 
