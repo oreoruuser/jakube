@@ -1,0 +1,1 @@
+Jakube is a library for performing nearest-neighbor searches.
