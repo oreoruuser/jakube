@@ -1,6 +1,5 @@
-add_library(VoyagerLib INTERFACE)
-target_include_directories(VoyagerLib 
+add_library(JakubeLib INTERFACE)
+target_include_directories(JakubeLib 
     INTERFACE 
         .
-        Spaces
 )
