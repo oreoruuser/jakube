@@ -1,1 +1,1 @@
-from .voyager_ext import *  # noqa: F403
+from .jakube_ext import *  # noqa: F403
