@@ -1,20 +1,38 @@
-# Ignore build directories
+*.egg-info/
 */build/*
 !build/.gitkeep
-
-# Ignore CMake generated files
-CMakeCache.txt
-CMakeFiles/
-cmake_install.cmake
-compile_commands.json
-
-# macOS specific
-.DS_Store
-
-# Xcode specific
-*.xcodeproj/
-*.xcworkspace/
-xcuserdata/
-
-# VS Code specific
+dist/
+tmp/
+__pycache__/
+*.pyd
+*.cpython*.so
+var/
+.idea/
+*.iml
 .vscode/
+*.class
+*.pyc
+.DS_Store
+target
+java/com_*.h
+java/classpath.txt
+java/linux-build/include/*
+python/voyager-headers
+.asv/
+*.dSYM
+
+# Cmake
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+!cpp/Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+DartConfiguration.tcl
+VoyagerTests
