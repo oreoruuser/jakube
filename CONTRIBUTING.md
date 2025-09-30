@@ -5,7 +5,7 @@ We'd love to get patches from you!
 We follow the [GitHub Flow Workflow](https://guides.github.com/introduction/flow/):
 
 1.  Fork the project 
-1.  Check out the `master` branch 
+1.  Check out the `main` branch 
 1.  Create a feature branch
 1.  Write code and tests for your change 
 1.  From your branch, make a pull request against `https://github.com/oreoruuser/jakube` 
@@ -61,7 +61,7 @@ make build
 ### Python Tests
 We use `tox` for testing - running tests from end-to-end should be as simple as:
 
-```
+```shell
 cd python
 python3.xx -m pip install tox
 tox
@@ -130,7 +130,7 @@ terms of the [LICENSE](https://github.com/oreoruuser/jakube/tree/main/LICENSE).
 ### `ModuleNotFoundError: No module named 'nanobind'`
 Try updating your version of `pip`:
 ```shell
-pip install --upgrade pip
+python3.xx -m pip install --upgrade pip
 ```
 
 ### `Failed to establish a new connection: [Errno -2] Name or service not known'`
