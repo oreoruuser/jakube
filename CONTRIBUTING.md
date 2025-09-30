@@ -15,14 +15,14 @@ We follow the [GitHub Flow Workflow](https://guides.github.com/introduction/flow
 
 ## Getting Started
 ### Prerequisites
-To compile Voyager from scratch, the following packages will need to be installed:
+To compile Jakube from scratch, the following packages will need to be installed:
 
 - [Python 3.7](https://www.python.org/downloads/) or higher.
 - A C++ compiler, e.g. `gcc`, `clang`, etc.
 
-### Building Voyager
+### Building Jakube
 #### Building Python
-There are some nuances to building the Voyager python code.  Please read on for more information.
+There are some nuances to building the Jakube python code.  Please read on for more information.
 Here python3.xx refers to the version of python you are using, e.g. python3.9, python3.10, etc.
 For basic building, you should be able to simply run the following commands:
 ```shell
@@ -117,7 +117,7 @@ When creating an issue please try to adhere to the following format:
     List all relevant steps to reproduce the observed behaviour.
 
 ## First Contributions
-If you are a first time contributor to `voyager`,  familiarize yourself with the:
+If you are a first time contributor to `Jakube`,  familiarize yourself with the:
 * [Code of Conduct](CODE_OF_CONDUCT.md)
 * [GitHub Flow Workflow](https://guides.github.com/introduction/flow/)
 
