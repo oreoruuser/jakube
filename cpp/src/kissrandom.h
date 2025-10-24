@@ -20,7 +20,7 @@ public:
 
     inline auto flip();
 
-    inline auto index(std::size_t);
+    inline std::size_t index(std::size_t);
 
     inline void set_seed(seed_t);
 
@@ -54,7 +54,7 @@ inline auto Jakube::Kiss64Random<seed_t>::flip(){
 }
 
 template <typename seed_t>
-inline auto Jakube::Kiss64Random<seed_t>::index(std::size_t n){
+inline std::size_t Jakube::Kiss64Random<seed_t>::index(std::size_t n){
     if (n == 0){
         return 0;
     }
