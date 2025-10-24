@@ -1,6 +1,7 @@
 *.egg-info/
 */build/*
 !build/.gitkeep
+jakube/jakube.xcodeproj/
 dist/
 tmp/
 __pycache__/
