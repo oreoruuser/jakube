@@ -66,5 +66,5 @@ inline void Jakube::Kiss64Random<seed_t>::set_seed(std::uint64_t seed){
     x = seed;
     y = 362436362436362436ULL;
     z = 1066149217761810ULL;
-    c = 123456123456123456ULL
+    c = 123456123456123456ULL;
 }
