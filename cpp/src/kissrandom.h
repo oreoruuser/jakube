@@ -22,7 +22,7 @@ public:
 
     inline auto index(std::size_t);
 
-    inline void set_seed(std::uint64_t);
+    inline void set_seed(seed_t);
 
 
 private:
@@ -62,7 +62,7 @@ inline auto Jakube::Kiss64Random<seed_t>::index(std::size_t n){
 }
 
 template <typename seed_t>
-inline void Jakube::Kiss64Random<seed_t>::set_seed(std::uint64_t seed){
+inline void Jakube::Kiss64Random<seed_t>::set_seed(seed_t seed){
     x = seed;
     y = 362436362436362436ULL;
     z = 1066149217761810ULL;
