@@ -1,3 +1,4 @@
 pytest
 tox
 clang-format~=16.0
+hypothesis>=6.92
