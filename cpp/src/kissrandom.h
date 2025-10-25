@@ -11,6 +11,10 @@ class Kiss64Random {
                   "Kiss64Random seed type must be an unsigned integer.");
     
 public:
+    
+    
+    static constexpr uint64_t default_seed = 1234567890987654321ULL;
+    
     Kiss64Random(seed_t seed):
         x{seed},
         y{362436362436362436ULL},
@@ -31,7 +35,6 @@ public:
 
 private:
     std::uint64_t x, y, z, c;
-    static constexpr uint64_t default_seed = 1234567890987654321ULL;
 
 };
 }
