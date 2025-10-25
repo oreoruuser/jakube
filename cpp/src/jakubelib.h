@@ -554,8 +554,8 @@ struct DotProduct : Angular {
   template<typename S, typename T>
   static inline T distance(const Node<S, T>* x, const Node<S, T>* y, int f) {
     if (x->built || y->built) {
-      // When index is already built, we don't need angular distances to retrieve NNs
-      // Thus, we can return dot product scores itself
+      // When the index is already built, return the negated dot product so that
+      // smaller distances still correspond to stronger similarity scores.
       return -dot(x->v, y->v, f);
     }
 
@@ -639,7 +639,7 @@ struct DotProduct : Angular {
 
   template<typename T>
   static inline T normalized_distance(T distance) {
-    return -distance;
+    return distance;
   }
 
   template<typename T, typename S, typename Node>
@@ -1186,18 +1186,37 @@ public:
     // Find the roots by scanning the end of the file and taking the nodes with most descendants
     _roots.clear();
     S m = -1;
+    std::vector<S> candidate_roots;
+    candidate_roots.reserve(16);
     for (S i = _n_nodes - 1; i >= 0; i--) {
-      S k = _get(i)->n_descendants;
-      if (m == -1 || k == m) {
-        _roots.push_back(i);
+      const Node* candidate = _get(i);
+      S k = candidate->n_descendants;
+      if (m == -1) {
         m = k;
-      } else {
+      }
+      if (k != m) {
         break;
       }
+      candidate_roots.push_back(i);
     }
-    // hacky fix: since the last root precedes the copy of all roots, delete it
-    if (_roots.size() > 1 && _get(_roots.front())->children[0] == _get(_roots.back())->children[0])
-      _roots.pop_back();
+
+    if (candidate_roots.size() % 2 == 0 && !candidate_roots.empty()) {
+      size_t half = candidate_roots.size() / 2;
+      bool has_copies = true;
+      for (size_t idx = 0; idx < half; ++idx) {
+        const Node* a = _get(candidate_roots[idx]);
+        const Node* b = _get(candidate_roots[idx + half]);
+        if (a->children[0] != b->children[0] || a->children[1] != b->children[1]) {
+          has_copies = false;
+          break;
+        }
+      }
+      if (has_copies) {
+        candidate_roots.erase(candidate_roots.begin() + half, candidate_roots.end());
+      }
+    }
+
+    _roots.assign(candidate_roots.begin(), candidate_roots.end());
     _loaded = true;
     _built = true;
     _n_items = m;
